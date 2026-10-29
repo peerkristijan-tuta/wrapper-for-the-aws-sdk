@@ -32,7 +32,7 @@ It's a service which allows computers from different LANs to send UDPs to each o
 
 1. Create a TailScale account
 2. Go to settings, then keys, then create authkey, and copy it
-3. Go to your CLI, then enter sudo tailscale up --authkey=<authkey> (or its Windows equivalent) to get your device connected to TailScale
+3. Go to your CLI, then enter sudo tailscale up --authkey=`<authkey>`(or its Windows equivalent) to get your device connected to TailScale
 4. Then, after the sudo command has completed, enter tailscale ip to get the virtual ip address that was assigned to you
 5. Enter tailscale down when you don't need it anymore 
 
