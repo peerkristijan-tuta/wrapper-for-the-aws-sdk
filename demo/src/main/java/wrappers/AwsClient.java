@@ -165,4 +165,21 @@ public class AwsClient {
                         .build()
         ).instanceInformationList().isEmpty();
     }
+
+    public String getPrivateIp(String instanceId) {
+        return ec2Client.describeInstances(
+                DescribeInstancesRequest.builder()
+                        .instanceIds(instanceId)
+                        .build()
+        ).reservations().get(0).instances().get(0).privateIpAddress();
+    }
+
+    public boolean checkInstanceTerminationStatus(String instanceId) {
+        return c2Client.describeInstances(
+                DescribeInstancesRequest.builder()
+                        .instanceIds(instanceId)
+                        .build()
+        ).reservations().get(0).instances().get(0)
+                .state().name() == InstanceStateName.TERMINATED;
+    }
 }
