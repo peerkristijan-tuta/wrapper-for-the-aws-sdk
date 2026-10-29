@@ -24,6 +24,8 @@ It's 5 var args are, in sequential order:
 - A reusable Tailscale auth key
 - The IP address in the Tailscale network that was assigned you by the organization
 
+Compile with this command: mvn clean compile exec:java -Dexec.mainClass="com.orchestrator.Orchestrator" -Dexec.args="<AWS_ACCESS_KEY_ID> <AWS_SECRET_ACCESS_KEY> <IAM_INSTANCE_PROFILE_NAME> <TAILSCALE_AUTH_KEY> <ORCHESTRATOR_TAILSCALE_IP>"
+
 
 About TailScale
 
